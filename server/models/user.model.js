@@ -69,7 +69,9 @@ const UserSchema = new mongoose.Schema(
         return ret;
       }
     }
-  }
+  },
+  
+  
 );
 
 UserSchema.index({ role: 1 });
