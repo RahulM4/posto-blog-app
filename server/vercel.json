@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-      "api/index.js": {
+      "index.js": {
         "runtime": "@vercel/node@1.15.0",
         "includeFiles": "node_modules/pdfkit/js/data/**"
       }
@@ -9,7 +9,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/api/index.js"
+        "dest": "/index.js"
       }
     ]
   }
