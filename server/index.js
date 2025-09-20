@@ -1,7 +1,7 @@
 const http = require('http');
-const app = require('../src/app');
-const config = require('../src/config/env');
-const { connectDb } = require('../src/config/database');
+const app = require('./app');
+const config = require('./config/env');
+const { connectDb } = require('./config/database');
 
 const server = http.createServer(app);
 

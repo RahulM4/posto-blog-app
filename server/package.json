@@ -1,12 +1,12 @@
 {
-  "name": "mern-admin-backend",
+  "name": "posto-admin-backend",
   "version": "0.1.0",
   "description": "Backend for MERN admin platform with RBAC, media management, and audit logging",
   "main": "src/server.js",
   "scripts": {
-    "dev": "nodemon src/server.js",
-    "start": "node src/server.js",
-    "seed": "node src/seed/index.js",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "seed": "node seed/index.js",
     "test": "cross-env NODE_ENV=test jest --runInBand"
   },
   "engines": {
