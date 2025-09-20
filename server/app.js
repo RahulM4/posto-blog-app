@@ -30,7 +30,8 @@ if (config.env !== 'test') {
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 app.use('/api', apiRoutes);
 
-app.get('/health', (req, res) => {
+
+app.get('/', (req, res) => {
   res.json({ status: 'ok, server is working fine' });
 });
 
