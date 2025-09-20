@@ -1,0 +1,62 @@
+const ROLES = {
+  SUPER_ADMIN: 'SuperAdmin',
+  ADMIN: 'Admin',
+  MODERATOR: 'Moderator',
+  USER: 'User'
+};
+
+const PERMISSIONS = {
+  USER_VIEW: 'user:view',
+  USER_MANAGE: 'user:manage',
+  USER_ASSIGN_ROLE: 'user:assignRole',
+  PRODUCT_VIEW: 'product:view',
+  PRODUCT_MANAGE: 'product:manage',
+  POST_VIEW: 'post:view',
+  POST_MANAGE: 'post:manage',
+  POST_APPROVE: 'post:approve',
+  MEDIA_MANAGE: 'media:manage',
+  CATEGORY_MANAGE: 'category:manage',
+  TAG_MANAGE: 'tag:manage',
+  SETTINGS_MANAGE: 'settings:manage',
+  AUDIT_VIEW: 'audit:view'
+};
+
+const rolePermissions = {
+  [ROLES.SUPER_ADMIN]: Object.values(PERMISSIONS),
+  [ROLES.ADMIN]: [
+    PERMISSIONS.USER_VIEW,
+    PERMISSIONS.USER_MANAGE,
+    PERMISSIONS.USER_ASSIGN_ROLE,
+    PERMISSIONS.PRODUCT_VIEW,
+    PERMISSIONS.PRODUCT_MANAGE,
+    PERMISSIONS.POST_VIEW,
+    PERMISSIONS.POST_MANAGE,
+    PERMISSIONS.POST_APPROVE,
+    PERMISSIONS.MEDIA_MANAGE,
+    PERMISSIONS.CATEGORY_MANAGE,
+    PERMISSIONS.TAG_MANAGE,
+    PERMISSIONS.SETTINGS_MANAGE,
+    PERMISSIONS.AUDIT_VIEW
+  ],
+  [ROLES.MODERATOR]: [
+    PERMISSIONS.USER_VIEW,
+    PERMISSIONS.PRODUCT_VIEW,
+    PERMISSIONS.POST_VIEW,
+    PERMISSIONS.POST_MANAGE,
+    PERMISSIONS.POST_APPROVE,
+    PERMISSIONS.MEDIA_MANAGE
+  ],
+  [ROLES.USER]: [
+    PERMISSIONS.PRODUCT_VIEW,
+    PERMISSIONS.POST_VIEW
+  ]
+};
+
+const roleHierarchy = [ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.MODERATOR, ROLES.USER];
+
+module.exports = {
+  ROLES,
+  PERMISSIONS,
+  rolePermissions,
+  roleHierarchy
+};
