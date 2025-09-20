@@ -10,7 +10,7 @@
     "test": "cross-env NODE_ENV=test jest --runInBand"
   },
   "engines": {
-    "node": ">=20.0.0"
+    "node": "^20.19.5"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
