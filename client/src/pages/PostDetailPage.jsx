@@ -69,6 +69,10 @@ const PostDetailPage = () => {
 
   const coverUrl = resolveMediaUrl(post.coverImage?.url);
   const authorName = post.authorId?.name || post.guestAuthor?.name;
+  const publishedDate = post.publishedAt ? new Date(post.publishedAt) : null;
+  const updatedDate = post.updatedAt ? new Date(post.updatedAt) : null;
+  const showUpdated =
+    !!(updatedDate && publishedDate && updatedDate.getTime() !== publishedDate.getTime());
 
   return (
     <article className="space-y-12">
@@ -84,7 +88,8 @@ const PostDetailPage = () => {
         <h1 className="text-3xl font-semibold text-contrast sm:text-4xl lg:text-5xl">{post.title}</h1>
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
           {authorName && <span>By {authorName}</span>}
-          {post.publishedAt && <span>Published {formatDate(post.publishedAt, true)}</span>}
+          {publishedDate && <span>Published {formatDate(publishedDate, true)}</span>}
+          {showUpdated && <span>Updated {formatDate(updatedDate, true)}</span>}
         </div>
         {coverUrl && (
           <div className="overflow-hidden rounded-3xl border border-muted">

@@ -161,6 +161,29 @@ const PostsPage = () => {
               ) : null
             }
           />
+
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-wrap gap-3">
+              <input
+                type="search"
+                value={searchInput}
+                onChange={(event) => setSearchInput(event.target.value)}
+                placeholder="Search posts"
+                className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
+              />
+              <select
+                value={sortOrder}
+                onChange={(event) => setSortOrder(event.target.value)}
+                className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="publishedAt:desc">Newest to oldest</option>
+                <option value="publishedAt:asc">Oldest to newest</option>
+              </select>
+            </div>
+            <div className="text-xs text-muted">
+              {searchTerm ? `Showing results for “${searchTerm}”` : `Sorted ${sortDescription}`}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -169,29 +192,6 @@ const PostsPage = () => {
       )}
 
       <section className="space-y-6">
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-wrap gap-3">
-          <input
-            type="search"
-            value={searchInput}
-            onChange={(event) => setSearchInput(event.target.value)}
-              placeholder="Search posts"
-              className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
-            />
-            <select
-              value={sortOrder}
-              onChange={(event) => setSortOrder(event.target.value)}
-              className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
-            >
-              <option value="publishedAt:desc">Newest to oldest</option>
-              <option value="publishedAt:asc">Oldest to newest</option>
-            </select>
-        </div>
-        <div className="text-xs text-muted">
-          {searchTerm ? `Showing results for “${searchTerm}”` : `Sorted ${sortDescription}`}
-        </div>
-      </div>
-
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold text-contrast">Latest posts</h2>
           <p className="text-sm text-muted">New stories arrive regularly.</p>

@@ -4,9 +4,13 @@ import { resolveMediaUrl } from '../utils/api.js';
 
 const PostCard = ({ post }) => {
   if (!post) return null;
-  const { slug, title, coverImage, publishedAt, createdAt, categoryId } = post;
+  const { slug, title, coverImage, publishedAt, createdAt, updatedAt, categoryId } = post;
   const imageUrl = resolveMediaUrl(coverImage?.url);
   const displayDate = publishedAt || createdAt;
+  const primaryDate = displayDate ? new Date(displayDate) : null;
+  const updatedDate = updatedAt ? new Date(updatedAt) : null;
+  const showUpdated =
+    !!(updatedDate && primaryDate && updatedDate.getTime() !== primaryDate.getTime());
   const categoryName =
     typeof categoryId === 'string' ? categoryId : categoryId?.name || categoryId?.title;
 
@@ -33,7 +37,12 @@ const PostCard = ({ post }) => {
       <div className="flex flex-1 flex-col gap-3 px-6 py-6">
         {(displayDate || categoryName) && (
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs uppercase tracking-wide text-muted">
-            {displayDate && <span>{formatDate(displayDate)}</span>}
+            <span className="flex flex-col gap-0.5">
+              {primaryDate && <span>{formatDate(primaryDate)}</span>}
+              {showUpdated && (
+                <span className="text-[0.6rem] uppercase text-secondary">Updated {formatDate(updatedDate, true)}</span>
+              )}
+            </span>
             {categoryName && (
               <span className="inline-flex items-center rounded-full border border-primary px-2 py-1 text-[0.65rem] font-semibold text-primary">
                 {categoryName}

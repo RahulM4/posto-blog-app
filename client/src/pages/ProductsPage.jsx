@@ -134,62 +134,67 @@ const ProductsPage = () => {
   }
 
   return (
-    <div className="space-y-10">
-      <PageHeading
-        eyebrow="Shop"
-        title="Limited-run drops"
-        description="Pair your reading list with hand-picked essentials from the Posto store."
-        actions={
-          categories.length ? (
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+    <div className="space-y-12">
+      <section className="relative overflow-hidden rounded-3xl border border-muted bg-surface px-8 py-10">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-transparent" />
+        <div className="relative z-10 space-y-8">
+          <PageHeading
+            eyebrow="Shop"
+            title="Limited-run drops"
+            description="Pair your reading list with hand-picked essentials from the Posto store."
+            actions={
+              categories.length ? (
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+                  <input
+                    type="text"
+                    value={categoryQuery}
+                    onChange={(event) => setCategoryQuery(event.target.value)}
+                    placeholder="Filter categories"
+                    className="w-full rounded-full border border-muted bg-background px-4 py-2 text-xs font-semibold uppercase tracking-wide text-muted placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-48"
+                  />
+                  {categoryQuery && filteredCategories.length === 0 ? (
+                    <p className="text-xs text-secondary">No categories match.</p>
+                  ) : (
+                    <CategoryPills
+                      categories={displayedCategories}
+                      activeCategoryId={activeCategoryId}
+                      onSelect={handleSelectCategory}
+                      onClear={handleClearCategory}
+                    />
+                  )}
+                </div>
+              ) : null
+            }
+          />
+
+          <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-wrap gap-3">
               <input
-                type="text"
-                value={categoryQuery}
-                onChange={(event) => setCategoryQuery(event.target.value)}
-                placeholder="Filter categories"
-                className="w-full rounded-full border border-muted bg-background px-4 py-2 text-xs font-semibold uppercase tracking-wide text-muted placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-48"
+                type="search"
+                value={searchInput}
+                onChange={(event) => setSearchInput(event.target.value)}
+                placeholder="Search products"
+                className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
               />
-              {categoryQuery && filteredCategories.length === 0 ? (
-                <p className="text-xs text-secondary">No categories match.</p>
-              ) : (
-                <CategoryPills
-                  categories={displayedCategories}
-                  activeCategoryId={activeCategoryId}
-                  onSelect={handleSelectCategory}
-                  onClear={handleClearCategory}
-                />
-              )}
+              <select
+                value={sortOrder}
+                onChange={(event) => setSortOrder(event.target.value)}
+                className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <option value="createdAt:desc">Newest to oldest</option>
+                <option value="createdAt:asc">Oldest to newest</option>
+              </select>
             </div>
-          ) : null
-        }
-      />
+            <div className="text-xs text-muted">
+              {searchTerm ? `Showing results for “${searchTerm}”` : `Sorted ${sortDescription}`}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {categoryError && categories.length === 0 && (
-        <p className="px-2 text-xs text-secondary">{categoryError}</p>
+        <p className="px-8 text-xs text-secondary">{categoryError}</p>
       )}
-
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-        <div className="flex flex-wrap gap-3">
-          <input
-            type="search"
-            value={searchInput}
-            onChange={(event) => setSearchInput(event.target.value)}
-            placeholder="Search products"
-            className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
-          />
-          <select
-            value={sortOrder}
-            onChange={(event) => setSortOrder(event.target.value)}
-            className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            <option value="createdAt:desc">Newest to oldest</option>
-            <option value="createdAt:asc">Oldest to newest</option>
-          </select>
-        </div>
-        <div className="text-xs text-muted">
-          {searchTerm ? `Showing results for “${searchTerm}”` : `Sorted ${sortDescription}`}
-        </div>
-      </div>
 
       {products.length === 0 ? (
         <EmptyState title="No products yet" description="New drops are coming soon." />

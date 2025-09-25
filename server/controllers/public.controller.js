@@ -72,7 +72,7 @@ const listPublicPosts = asyncHandler(async (req, res) => {
       .sort(sort)
       .skip(skip)
       .limit(limit)
-      .select('title slug coverImage publishedAt createdAt categoryId')
+      .select('title slug coverImage publishedAt createdAt updatedAt categoryId')
       .populate('categoryId', 'name slug')
       .lean(),
     Post.countDocuments(query)
