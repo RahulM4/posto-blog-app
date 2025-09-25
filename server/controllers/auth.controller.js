@@ -4,12 +4,18 @@ const authService = require('../services/auth.service');
 const config = require('../config/env');
 const User = require('../models/user.model');
 
-const setAuthCookies = (res, tokens) => {
-  const cookieOptions = {
+const buildCookieOptions = () => {
+  const isProduction = config.env === 'production';
+  return {
     httpOnly: true,
-    sameSite: 'lax',
-    secure: config.env === 'production'
+    sameSite: isProduction ? 'none' : 'lax',
+    secure: isProduction,
+    path: '/'
   };
+};
+
+const setAuthCookies = (res, tokens) => {
+  const cookieOptions = buildCookieOptions();
   res.cookie('accessToken', tokens.accessToken, {
     ...cookieOptions,
     maxAge: 15 * 60 * 1000
@@ -21,8 +27,9 @@ const setAuthCookies = (res, tokens) => {
 };
 
 const clearAuthCookies = (res) => {
-  res.clearCookie('accessToken');
-  res.clearCookie('refreshToken');
+  const cookieOptions = buildCookieOptions();
+  res.clearCookie('accessToken', cookieOptions);
+  res.clearCookie('refreshToken', cookieOptions);
 };
 
 const register = asyncHandler(async (req, res) => {
