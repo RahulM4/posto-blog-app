@@ -174,12 +174,12 @@ const ProductsPage = () => {
                 value={searchInput}
                 onChange={(event) => setSearchInput(event.target.value)}
                 placeholder="Search products"
-                className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
+                className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
               />
               <select
                 value={sortOrder}
                 onChange={(event) => setSortOrder(event.target.value)}
-                className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-body focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="createdAt:desc">Newest to oldest</option>
                 <option value="createdAt:asc">Oldest to newest</option>
@@ -223,7 +223,7 @@ const ProductsPage = () => {
             type="button"
             onClick={loadMore}
             disabled={loadingMore}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-secondary disabled:cursor-not-allowed disabled:bg-accent"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-heading disabled:cursor-not-allowed disabled:bg-accent"
           >
             {loadingMore ? 'Loading…' : 'Load more'}
           </button>

@@ -64,7 +64,7 @@ const RichTextEditor = forwardRef(({ value = '', onChange, placeholder = 'Start 
             type="button"
             title={action.title}
             onClick={() => execCommand(action.command, action.value)}
-            className="rounded-full border border-muted px-3 py-1 font-semibold text-contrast transition hover:border-primary hover:text-secondary"
+            className="rounded-full border border-muted px-3 py-1 font-semibold text-primary transition hover:border-primary hover:text-heading"
           >
             {action.label}
           </button>
@@ -73,7 +73,7 @@ const RichTextEditor = forwardRef(({ value = '', onChange, placeholder = 'Start 
           type="button"
           title="Insert link"
           onClick={handleLink}
-          className="rounded-full border border-muted px-3 py-1 font-semibold text-contrast transition hover:border-primary hover:text-secondary"
+          className="rounded-full border border-muted px-3 py-1 font-semibold text-primary transition hover:border-primary hover:text-heading"
         >
           Link
         </button>
@@ -82,7 +82,7 @@ const RichTextEditor = forwardRef(({ value = '', onChange, placeholder = 'Start 
             type="button"
             title="Insert image"
             onClick={onRequestInsertImage}
-            className="rounded-full border border-muted px-3 py-1 font-semibold text-contrast transition hover:border-primary hover:text-secondary"
+            className="rounded-full border border-muted px-3 py-1 font-semibold text-primary transition hover:border-primary hover:text-heading"
           >
             Image
           </button>
@@ -91,7 +91,7 @@ const RichTextEditor = forwardRef(({ value = '', onChange, placeholder = 'Start 
           type="button"
           title="Clear formatting"
           onClick={() => execCommand('removeFormat')}
-          className="rounded-full border border-muted px-3 py-1 font-semibold text-contrast transition hover:border-primary hover:text-secondary"
+          className="rounded-full border border-muted px-3 py-1 font-semibold text-primary transition hover:border-primary hover:text-heading"
         >
           Clear
         </button>
@@ -103,7 +103,7 @@ const RichTextEditor = forwardRef(({ value = '', onChange, placeholder = 'Start 
         )}
         <div
           ref={editorRef}
-          className="min-h-[160px] w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast focus:border-primary focus:outline-none"
+          className="min-h-[160px] w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body focus:border-primary focus:outline-none"
           contentEditable
           onInput={emitChange}
           onBlur={() => setIsFocused(false)}

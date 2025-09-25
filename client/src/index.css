@@ -2,6 +2,20 @@
 @import "tailwindcss";
 
 :root {
+  --color-primary: #111827;
+  --color-secondary: #374151;
+  --color-accent: #f3f4f6;
+  --color-surface: #ffffff;
+  --color-background: #f9fafb;
+  --color-body: #1f2937;
+  --color-contrast: #ffffff;
+  --color-muted: #6b7280;
+  --color-outline: #111827;
+  --color-shadow: rgba(15, 23, 42, 0.08);
+  --color-heading: #E50914;
+}
+
+:root.theme-dark {
   --color-primary: #E50914;
   --color-secondary: #B81D24;
   --color-accent: #2F2F2F;
@@ -12,6 +26,21 @@
   --color-muted: #8C8C8C;
   --color-outline: #E50914;
   --color-shadow: transparent;
+  --color-heading: #E50914;
+}
+
+:root.theme-light {
+  --color-primary: #111827;
+  --color-secondary: #374151;
+  --color-accent: #f3f4f6;
+  --color-surface: #ffffff;
+  --color-background: #f9fafb;
+  --color-body: #1f2937;
+  --color-contrast: #ffffff;
+  --color-muted: #6b7280;
+  --color-outline: #111827;
+  --color-shadow: rgba(15, 23, 42, 0.08);
+  --color-heading: #E50914;
 }
 
 * {
@@ -102,6 +131,14 @@ body {
   background-color: var(--color-accent);
 }
 
+.bg-heading {
+  background-color: var(--color-heading);
+}
+
+.hover\:bg-heading:hover {
+  background-color: var(--color-heading);
+}
+
 .bg-surface {
   background-color: var(--color-surface);
 }
@@ -134,12 +171,20 @@ body {
   color: var(--color-muted);
 }
 
+.text-heading {
+  color: var(--color-heading);
+}
+
 .hover\:text-secondary:hover {
   color: var(--color-secondary);
 }
 
 .hover\:text-contrast:hover {
   color: var(--color-contrast);
+}
+
+.hover\:text-heading:hover {
+  color: var(--color-heading);
 }
 
 .border-primary {

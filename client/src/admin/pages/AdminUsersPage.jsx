@@ -63,7 +63,7 @@ const AdminUsersPage = () => {
     <div className="space-y-4">
       <header className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-semibold text-contrast">Users</h2>
+          <h2 className="text-xl font-semibold text-heading">Users</h2>
           <p className="text-sm text-muted">Total users: {meta.total ?? users.length}</p>
         </div>
       </header>
@@ -96,7 +96,7 @@ const AdminUsersPage = () => {
                       <button
                         type="button"
                         onClick={() => handleApproval(user._id || user.id, 'approved')}
-                        className="rounded-full border border-primary bg-accent px-3 py-1 text-xs font-semibold text-primary hover:bg-secondary hover:text-contrast"
+                        className="rounded-full border border-primary bg-accent px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                       >
                         Approve
                       </button>
@@ -105,7 +105,7 @@ const AdminUsersPage = () => {
                       <button
                         type="button"
                         onClick={() => handleApproval(user._id || user.id, 'rejected')}
-                        className="rounded-full border border-secondary bg-surface px-3 py-1 text-xs font-semibold text-secondary hover:bg-accent"
+                        className="rounded-full border border-secondary bg-surface px-3 py-1 text-xs font-semibold text-secondary transition hover:bg-heading hover:text-contrast"
                       >
                         Reject
                       </button>
@@ -114,7 +114,7 @@ const AdminUsersPage = () => {
                       <button
                         type="button"
                         onClick={() => handleStatus(user._id || user.id, 'active')}
-                        className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                        className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                       >
                         Activate
                       </button>
@@ -123,7 +123,7 @@ const AdminUsersPage = () => {
                       <button
                         type="button"
                         onClick={() => handleStatus(user._id || user.id, 'inactive')}
-                        className="rounded-full border border-secondary bg-background px-3 py-1 text-xs font-semibold text-secondary hover:bg-accent"
+                        className="rounded-full border border-secondary bg-background px-3 py-1 text-xs font-semibold text-secondary transition hover:bg-heading hover:text-contrast"
                       >
                         Deactivate
                       </button>

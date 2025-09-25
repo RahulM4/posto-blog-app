@@ -54,22 +54,22 @@ const AdminDashboardPage = () => {
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="rounded-3xl border border-muted bg-surface p-6">
           <p className="text-xs uppercase tracking-[0.4em] text-secondary">Total users</p>
-          <p className="mt-3 text-3xl font-semibold text-contrast">{stats.users}</p>
+          <p className="mt-3 text-3xl font-semibold text-heading">{stats.users}</p>
         </div>
         <div className="rounded-3xl border border-muted bg-surface p-6">
           <p className="text-xs uppercase tracking-[0.4em] text-secondary">Total posts</p>
-          <p className="mt-3 text-3xl font-semibold text-contrast">{stats.posts}</p>
+          <p className="mt-3 text-3xl font-semibold text-heading">{stats.posts}</p>
         </div>
         <div className="rounded-3xl border border-muted bg-surface p-6">
           <p className="text-xs uppercase tracking-[0.4em] text-secondary">Total products</p>
-          <p className="mt-3 text-3xl font-semibold text-contrast">{stats.products}</p>
+          <p className="mt-3 text-3xl font-semibold text-heading">{stats.products}</p>
         </div>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
         <section className="space-y-4">
           <header className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-contrast">Recent posts</h2>
+            <h2 className="text-lg font-semibold text-heading">Recent posts</h2>
             <LinkButton to="/admin/posts" label="Manage" />
           </header>
           {recentPosts.length ? (
@@ -102,7 +102,7 @@ const AdminDashboardPage = () => {
 
         <section className="space-y-4">
           <header className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-contrast">New accounts</h2>
+            <h2 className="text-lg font-semibold text-heading">New accounts</h2>
             <LinkButton to="/admin/users" label="Manage" />
           </header>
           {recentUsers.length ? (
@@ -133,7 +133,7 @@ const LinkButton = ({ to, label }) => {
   return (
     <NavLink
       to={to}
-      className="rounded-full border border-primary px-3 py-1 text-xs font-semibold text-contrast transition hover:bg-accent"
+      className="rounded-full border border-primary px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
     >
       {label}
     </NavLink>

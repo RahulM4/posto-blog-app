@@ -28,7 +28,7 @@ const PostCard = ({ post }) => {
             loading="lazy"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center bg-surface text-4xl font-semibold text-contrast">
+          <div className="flex h-full w-full items-center justify-center bg-heading text-4xl font-semibold text-contrast">
             {title?.charAt(0) ?? 'P'}
           </div>
         )}
@@ -50,7 +50,7 @@ const PostCard = ({ post }) => {
             )}
           </div>
         )}
-        <h3 className="text-lg font-semibold leading-tight text-contrast group-hover:text-secondary">
+        <h3 className="text-lg font-semibold leading-tight text-heading transition-colors group-hover:text-secondary">
           {title}
         </h3>
         <span className="mt-auto inline-flex w-fit items-center gap-1 text-xs font-semibold text-secondary">

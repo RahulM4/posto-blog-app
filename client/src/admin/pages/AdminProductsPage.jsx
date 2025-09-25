@@ -249,7 +249,7 @@ const AdminProductsPage = () => {
     <div className="space-y-4">
       <header className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-semibold text-contrast">Products</h2>
+          <h2 className="text-xl font-semibold text-heading">Products</h2>
           <p className="text-sm text-muted">Total products: {meta.total ?? products.length}</p>
         </div>
       </header>
@@ -259,7 +259,7 @@ const AdminProductsPage = () => {
         className="space-y-4 rounded-3xl border border-muted bg-surface p-6 shadow-lg shadow-soft"
       >
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-contrast">
+          <h3 className="text-lg font-semibold text-heading">
             {editingProduct ? 'Edit product' : 'Add new product'}
           </h3>
           {editingProduct && (
@@ -278,19 +278,19 @@ const AdminProductsPage = () => {
           )}
         </div>
         <div className="space-y-3 rounded-2xl border border-muted bg-background/40 p-4">
-          <h4 className="text-sm font-semibold text-contrast">Product categories</h4>
+          <h4 className="text-sm font-semibold text-heading">Product categories</h4>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <input
               type="text"
               value={newCategoryName}
               onChange={(event) => setNewCategoryName(event.target.value)}
               placeholder="e.g. Limited Edition"
-              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
             />
             <button
               type="button"
               onClick={handleCreateCategory}
-              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-contrast transition hover:bg-secondary"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-contrast transition hover:bg-heading"
             >
               Add category
             </button>
@@ -433,7 +433,7 @@ const AdminProductsPage = () => {
             <button
               type="button"
               onClick={() => productImageInputRef.current?.click()}
-              className="rounded-full border border-muted px-3 py-1 hover:border-primary hover:text-contrast"
+              className="rounded-full border border-muted px-3 py-1 hover:border-primary hover:text-heading"
             >
               Upload image
             </button>
@@ -467,7 +467,7 @@ const AdminProductsPage = () => {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="inline-flex items-center rounded-full bg-primary px-6 py-2 text-sm font-semibold text-contrast transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex items-center rounded-full bg-primary px-6 py-2 text-sm font-semibold text-contrast transition hover:bg-heading focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
             disabled={creating}
           >
             {creating ? 'Saving…' : editingProduct ? 'Save changes' : 'Add product'}
@@ -496,7 +496,7 @@ const AdminProductsPage = () => {
                 </div>
               )}
               <div className="flex flex-1 flex-col gap-1">
-                <h3 className="text-lg font-semibold text-contrast">{product.title}</h3>
+                <h3 className="text-lg font-semibold text-heading">{product.title}</h3>
                 <p className="text-sm text-muted">Price: {formatCurrency(product.price || 0)}</p>
                 <p className="text-sm text-muted">Stock: {product.stock ?? 0}</p>
                 {product.categoryId?.name && (
@@ -512,7 +512,7 @@ const AdminProductsPage = () => {
                       status: product.status === 'published' ? 'draft' : 'published'
                     })
                   }
-                  className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                  className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                 >
                   {product.status === 'published' ? 'Move to draft' : 'Publish'}
                 </button>
@@ -523,7 +523,7 @@ const AdminProductsPage = () => {
                       visibility: product.visibility === 'visible' ? 'hidden' : 'visible'
                     })
                   }
-                  className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                  className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                 >
                   {product.visibility === 'visible' ? 'Hide' : 'Show'}
                 </button>
@@ -535,7 +535,7 @@ const AdminProductsPage = () => {
                     setCreateSuccess('');
                     applyProductToForm(product);
                   }}
-                  className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                  className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                 >
                   Edit
                 </button>

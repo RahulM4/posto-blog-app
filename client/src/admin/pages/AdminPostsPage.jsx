@@ -115,24 +115,24 @@ const AdminPostsPage = () => {
     <div className="space-y-4">
       <header className="flex items-center justify-between">
         <div>
-          <h2 className="text-xl font-semibold text-contrast">Posts</h2>
+          <h2 className="text-xl font-semibold text-heading">Posts</h2>
           <p className="text-sm text-muted">Total posts: {meta.total ?? posts.length}</p>
         </div>
       </header>
 
       <form onSubmit={handleCreateCategory} className="space-y-3 rounded-3xl border border-muted bg-surface p-5 shadow-sm shadow-soft">
-        <h3 className="text-base font-semibold text-contrast">Post categories</h3>
+        <h3 className="text-base font-semibold text-heading">Post categories</h3>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <input
             type="text"
             value={newCategoryName}
             onChange={(event) => setNewCategoryName(event.target.value)}
             placeholder="e.g. Tutorials"
-            className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
           />
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-contrast transition hover:bg-secondary"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-contrast transition hover:bg-heading"
           >
             Add category
           </button>
@@ -148,7 +148,7 @@ const AdminPostsPage = () => {
         <div className="space-y-3 rounded-3xl border border-muted bg-surface p-5 shadow-lg shadow-soft">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-base font-semibold text-contrast">Update post</h3>
+              <h3 className="text-base font-semibold text-heading">Update post</h3>
               <p className="text-xs text-muted">Publishing will immediately reflect on the site.</p>
             </div>
             <button
@@ -189,7 +189,7 @@ const AdminPostsPage = () => {
               className="flex flex-col gap-4 rounded-3xl border border-muted bg-surface p-5 shadow-sm shadow-soft sm:flex-row sm:items-center"
             >
               <div className="flex flex-1 flex-col gap-2">
-              <h3 className="text-lg font-semibold text-contrast">{post.title}</h3>
+              <h3 className="text-lg font-semibold text-heading">{post.title}</h3>
               <p className="text-sm text-muted">
                 Status: <span className="capitalize text-primary">{post.status}</span> — Submitted {formatDate(post.createdAt, true)}
               </p>
@@ -209,7 +209,7 @@ const AdminPostsPage = () => {
                 <button
                   type="button"
                   onClick={() => handleApprove(post._id || post.id)}
-                  className="rounded-full border border-primary bg-accent px-3 py-1 text-xs font-semibold text-primary hover:bg-secondary hover:text-contrast"
+                  className="rounded-full border border-primary bg-accent px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                 >
                   Publish
                 </button>
@@ -218,7 +218,7 @@ const AdminPostsPage = () => {
                 <button
                   type="button"
                   onClick={() => handleStatus(post._id || post.id, 'review')}
-                  className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                  className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                 >
                   Mark review
                 </button>
@@ -227,7 +227,7 @@ const AdminPostsPage = () => {
                 <button
                   type="button"
                   onClick={() => handleStatus(post._id || post.id, 'draft')}
-                  className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                  className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                 >
                   Move to draft
                 </button>
@@ -235,7 +235,7 @@ const AdminPostsPage = () => {
               <button
                 type="button"
                 onClick={() => beginEditingPost(post)}
-                className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                className="rounded-full border border-muted bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
               >
                 Edit
               </button>

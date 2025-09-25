@@ -8,8 +8,8 @@ const CategoryPills = ({ categories = [], activeCategoryId = '', onSelect, onCle
       onClick={onClick}
       className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition ${
         isActive
-          ? 'border-primary bg-secondary text-contrast'
-          : 'border-muted text-muted hover:border-primary hover:bg-accent hover:text-contrast'
+          ? 'border-primary bg-heading text-contrast'
+          : 'border-muted text-muted hover:border-primary hover:bg-heading hover:text-contrast'
       }`}
     >
       {label}

@@ -13,7 +13,7 @@ import PostComposer from '../components/PostComposer.jsx';
 const STATUS_INFO = {
   published: {
     label: 'Published',
-    className: 'border border-primary bg-accent text-contrast',
+    className: 'border border-primary bg-accent text-primary',
     message: 'Visible on the homepage and ready to share.'
   },
   review: {
@@ -111,7 +111,7 @@ const MyPostsPage = () => {
         <div className="space-y-4 rounded-3xl border border-muted bg-surface p-6 shadow-lg shadow-soft">
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-lg font-semibold text-contrast">Edit your story</h2>
+              <h2 className="text-lg font-semibold text-heading">Edit your story</h2>
               <p className="text-xs text-muted">Saving changes will send this post for a fresh review.</p>
             </div>
             <button
@@ -156,7 +156,7 @@ const MyPostsPage = () => {
           {posts.map((post) => {
             const statusInfo = STATUS_INFO[post.status] || {
               label: post.status,
-              className: 'border border-muted bg-background text-contrast',
+              className: 'border border-muted bg-background text-body',
               message: 'Processing your submission.'
             };
             return (
@@ -166,7 +166,7 @@ const MyPostsPage = () => {
               >
                 <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
                   <div className="space-y-2">
-                    <h2 className="text-xl font-semibold text-contrast">{post.title}</h2>
+                    <h2 className="text-xl font-semibold text-heading">{post.title}</h2>
                     <p className="text-sm text-muted">
                       Submitted {formatDate(post.createdAt, true)}
                       {post.publishedAt && post.status === 'published' && ` · Published ${formatDate(post.publishedAt, true)}`}
@@ -187,7 +187,7 @@ const MyPostsPage = () => {
                   <button
                     type="button"
                     onClick={() => beginEditingPost(post)}
-                    className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary hover:bg-accent"
+                    className="rounded-full border border-primary bg-background px-3 py-1 text-xs font-semibold text-primary transition hover:bg-heading hover:text-contrast"
                   >
                     Edit post
                   </button>

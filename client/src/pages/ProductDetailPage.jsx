@@ -71,7 +71,7 @@ const ProductDetailPage = () => {
   return (
     <div className="space-y-12">
       <div className="space-y-6">
-        <Link to="/products" className="text-sm text-secondary hover:text-contrast">
+        <Link to="/products" className="text-sm text-secondary hover:text-heading">
           ← Back to products
         </Link>
         <div className="grid gap-10 lg:grid-cols-2">
@@ -85,7 +85,7 @@ const ProductDetailPage = () => {
                 ))}
               </div>
             ) : (
-              <div className="flex h-80 items-center justify-center rounded-3xl border border-muted bg-surface text-5xl font-semibold text-contrast">
+              <div className="flex h-80 items-center justify-center rounded-3xl border border-muted bg-heading text-5xl font-semibold text-contrast">
                 {product.title?.charAt(0) ?? 'P'}
               </div>
             )}
@@ -96,7 +96,7 @@ const ProductDetailPage = () => {
               {product.categoryId?.name && (
                 <p className="text-xs uppercase tracking-[0.3em] text-secondary">{product.categoryId.name}</p>
               )}
-              <h1 className="text-3xl font-semibold text-contrast sm:text-4xl">{product.title}</h1>
+              <h1 className="text-3xl font-semibold text-heading sm:text-4xl">{product.title}</h1>
               <p className="text-2xl font-bold text-secondary">{formatCurrency(product.price)}</p>
             </div>
 
@@ -104,7 +104,7 @@ const ProductDetailPage = () => {
 
             <TagList tags={product.tagIds} />
 
-            <div className="rounded-3xl border border-primary bg-accent px-6 py-6 text-sm text-contrast">
+            <div className="rounded-3xl border border-primary bg-accent px-6 py-6 text-sm text-body">
               <p className="font-semibold">Limited availability</p>
               <p className="mt-2 text-secondary">
                 These drops are released in small batches. Secure yours before the next restock.
@@ -113,7 +113,7 @@ const ProductDetailPage = () => {
 
             <button
               type="button"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-secondary"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-heading"
             >
               Join waitlist
             </button>
@@ -123,8 +123,8 @@ const ProductDetailPage = () => {
 
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-contrast">You might also like</h2>
-          <Link to="/products" className="text-sm text-secondary hover:text-contrast">
+          <h2 className="text-2xl font-semibold text-heading">You might also like</h2>
+          <Link to="/products" className="text-sm text-secondary hover:text-heading">
             View all
           </Link>
         </div>

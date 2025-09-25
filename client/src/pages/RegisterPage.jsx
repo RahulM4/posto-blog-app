@@ -45,13 +45,13 @@ const RegisterPage = () => {
       <div className="mx-auto max-w-md space-y-6 rounded-3xl border border-muted bg-surface p-6 shadow-lg shadow-soft">
         {error && <ErrorState message={error} />}
         {completed ? (
-          <div className="space-y-3 text-sm text-contrast">
+          <div className="space-y-3 text-sm text-body">
             <p className="rounded-2xl border border-secondary bg-accent p-4 text-secondary">
               We emailed a verification link to {form.email}. Click it to confirm your address, then wait for an admin to approve your account.
             </p>
             <p>
               Already verified?{' '}
-              <Link to="/login" className="text-secondary hover:text-contrast">
+              <Link to="/login" className="text-secondary hover:text-heading">
                 Sign in here
               </Link>
               .
@@ -60,7 +60,7 @@ const RegisterPage = () => {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-            <label htmlFor="name" className="block text-sm font-semibold text-contrast">
+            <label htmlFor="name" className="block text-sm font-semibold text-primary">
                 Full name
               </label>
               <input
@@ -70,12 +70,12 @@ const RegisterPage = () => {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Jane Doe"
-                className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
             </div>
             <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm font-semibold text-contrast">
+            <label htmlFor="email" className="block text-sm font-semibold text-primary">
                 Email
               </label>
               <input
@@ -85,12 +85,12 @@ const RegisterPage = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="you@example.com"
-                className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
                 required
               />
             </div>
             <div className="space-y-2">
-            <label htmlFor="password" className="block text-sm font-semibold text-contrast">
+            <label htmlFor="password" className="block text-sm font-semibold text-primary">
                 Password
               </label>
               <input
@@ -100,14 +100,14 @@ const RegisterPage = () => {
                 value={form.password}
                 onChange={handleChange}
                 placeholder="At least 8 characters"
-                className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
                 required
                 minLength={8}
               />
             </div>
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 text-sm font-semibold text-contrast transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 text-sm font-semibold text-contrast transition hover:bg-heading focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
               disabled={submitting}
             >
               {submitting ? 'Creating account…' : 'Create account'}
@@ -117,7 +117,7 @@ const RegisterPage = () => {
         {!completed && (
           <p className="text-center text-sm text-muted">
             Already verified?{' '}
-            <Link to="/login" className="text-secondary hover:text-contrast">
+            <Link to="/login" className="text-secondary hover:text-heading">
               Sign in here
             </Link>
             .

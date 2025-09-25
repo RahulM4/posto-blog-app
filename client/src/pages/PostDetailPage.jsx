@@ -78,14 +78,14 @@ const PostDetailPage = () => {
     <article className="space-y-12">
       <div className="flex flex-col gap-6">
         <div className="space-y-2 text-sm text-muted">
-          <Link to="/" className="text-secondary hover:text-contrast">
+          <Link to="/" className="text-secondary hover:text-heading">
             ← Back to posts
           </Link>
           {post.categoryId?.name && (
             <p className="text-xs uppercase tracking-[0.3em] text-secondary">{post.categoryId.name}</p>
           )}
         </div>
-        <h1 className="text-3xl font-semibold text-contrast sm:text-4xl lg:text-5xl">{post.title}</h1>
+        <h1 className="text-3xl font-semibold text-heading sm:text-4xl lg:text-5xl">{post.title}</h1>
         <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
           {authorName && <span>By {authorName}</span>}
           {publishedDate && <span>Published {formatDate(publishedDate, true)}</span>}
@@ -105,8 +105,8 @@ const PostDetailPage = () => {
 
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-contrast">More stories</h2>
-          <Link to="/" className="text-sm text-secondary hover:text-contrast">
+          <h2 className="text-2xl font-semibold text-heading">More stories</h2>
+          <Link to="/" className="text-sm text-secondary hover:text-heading">
             View all
           </Link>
         </div>

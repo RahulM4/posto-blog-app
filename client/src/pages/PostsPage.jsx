@@ -169,12 +169,12 @@ const PostsPage = () => {
                 value={searchInput}
                 onChange={(event) => setSearchInput(event.target.value)}
                 placeholder="Search posts"
-                className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
+                className="w-full rounded-full border border-muted bg-background px-4 py-2 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary sm:w-64"
               />
               <select
                 value={sortOrder}
                 onChange={(event) => setSortOrder(event.target.value)}
-                className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-contrast focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                className="rounded-full border border-muted bg-background px-4 py-2 text-sm text-body focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
               >
                 <option value="publishedAt:desc">Newest to oldest</option>
                 <option value="publishedAt:asc">Oldest to newest</option>
@@ -193,7 +193,7 @@ const PostsPage = () => {
 
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-contrast">Latest posts</h2>
+          <h2 className="text-2xl font-semibold text-heading">Latest posts</h2>
           <p className="text-sm text-muted">New stories arrive regularly.</p>
         </div>
 
@@ -223,7 +223,7 @@ const PostsPage = () => {
               type="button"
               onClick={() => fetchPosts((meta?.page || 1) + 1, true)}
               disabled={loadingMore}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-secondary disabled:cursor-not-allowed disabled:bg-accent"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-heading disabled:cursor-not-allowed disabled:bg-accent"
             >
               {loadingMore ? 'Loading…' : 'Load more'}
             </button>

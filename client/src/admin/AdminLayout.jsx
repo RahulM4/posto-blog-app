@@ -35,7 +35,7 @@ const AdminLayout = () => {
         <header className="flex flex-wrap items-center justify-between gap-4">
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-secondary">Admin dashboard</p>
-            <h1 className="text-3xl font-semibold text-contrast">Welcome back, {user.name}</h1>
+            <h1 className="text-3xl font-semibold text-heading">Welcome back, {user.name}</h1>
           </div>
           <div className="flex flex-wrap items-center gap-3 text-sm">
             <nav className="flex flex-wrap items-center gap-2">
@@ -46,7 +46,7 @@ const AdminLayout = () => {
                   end={item.end}
                   className={({ isActive }) =>
                     `rounded-full px-4 py-2 transition ${
-                      isActive ? 'bg-primary text-contrast shadow-lg shadow-soft' : 'border border-muted text-muted hover:border-primary hover:text-contrast'
+                      isActive ? 'bg-primary text-contrast shadow-lg shadow-soft' : 'border border-muted text-muted hover:border-primary hover:text-heading'
                     }`
                   }
                 >

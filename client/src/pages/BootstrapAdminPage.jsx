@@ -60,7 +60,7 @@ const BootstrapAdminPage = () => {
         )}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="bootstrapToken" className="block text-sm font-semibold text-contrast">
+            <label htmlFor="bootstrapToken" className="block text-sm font-semibold text-primary">
               Bootstrap token
             </label>
             <input
@@ -70,13 +70,13 @@ const BootstrapAdminPage = () => {
               value={form.bootstrapToken}
               onChange={handleChange}
               placeholder="Enter the secret token"
-              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="name" className="block text-sm font-semibold text-contrast">
+            <label htmlFor="name" className="block text-sm font-semibold text-primary">
               Full name
             </label>
             <input
@@ -86,13 +86,13 @@ const BootstrapAdminPage = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="Admin name"
-              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm font-semibold text-contrast">
+            <label htmlFor="email" className="block text-sm font-semibold text-primary">
               Email
             </label>
             <input
@@ -102,13 +102,13 @@ const BootstrapAdminPage = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="admin@example.com"
-              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="password" className="block text-sm font-semibold text-contrast">
+            <label htmlFor="password" className="block text-sm font-semibold text-primary">
               Password
             </label>
             <input
@@ -118,7 +118,7 @@ const BootstrapAdminPage = () => {
               value={form.password}
               onChange={handleChange}
               placeholder="At least 8 characters"
-              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
               required
               minLength={8}
             />
@@ -126,7 +126,7 @@ const BootstrapAdminPage = () => {
 
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 text-sm font-semibold text-contrast transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
+            className="inline-flex w-full items-center justify-center rounded-2xl bg-primary px-4 py-3 text-sm font-semibold text-contrast transition hover:bg-heading focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
             disabled={submitting}
           >
             {submitting ? 'Creating…' : 'Create admin'}

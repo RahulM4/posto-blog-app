@@ -301,7 +301,7 @@ const PostComposer = ({
           {isAdmin ? 'AD' : 'ME'}
         </div>
         <div>
-          <p className="text-sm font-semibold text-contrast">{isAdmin ? 'Share an update' : "What’s on your mind?"}</p>
+          <p className="text-sm font-semibold text-primary">{isAdmin ? 'Share an update' : "What’s on your mind?"}</p>
           <p className="text-xs text-muted">
             {isAdmin ? 'Posts can be published instantly or saved as drafts.' : 'Your story will be reviewed before publishing.'}
           </p>
@@ -313,7 +313,7 @@ const PostComposer = ({
         value={title}
         onChange={(event) => setTitle(event.target.value)}
         placeholder={isAdmin ? 'Post headline' : 'Give your story a title'}
-        className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+        className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
         required
       />
 
@@ -329,7 +329,7 @@ const PostComposer = ({
 
       {categoryOptions.length > 0 ? (
         <div className="space-y-2">
-          <label htmlFor="post-category" className="block text-sm font-semibold text-contrast">
+          <label htmlFor="post-category" className="block text-sm font-semibold text-primary">
             Category
           </label>
           <input
@@ -337,13 +337,13 @@ const PostComposer = ({
             value={categorySearch}
             onChange={(event) => setCategorySearch(event.target.value)}
             placeholder="Search categories"
-            className="w-full rounded-2xl border border-muted bg-background px-4 py-2 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-2xl border border-muted bg-background px-4 py-2 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
           />
           <select
             id="post-category"
             value={categoryId}
             onChange={(event) => setCategoryId(event.target.value)}
-            className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
             required
           >
             <option value="">Select category</option>
@@ -369,7 +369,7 @@ const PostComposer = ({
           value={coverImageUrl}
           onChange={(event) => setCoverImageUrl(event.target.value)}
           placeholder="Cover image URL (optional)"
-          className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full rounded-2xl border border-muted bg-background px-4 py-3 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <div className="flex flex-wrap items-center gap-2 text-xs text-muted">
           <button type="button" onClick={handleGenerateCover} className="rounded-full border border-muted px-3 py-1 hover:border-primary hover:text-secondary">
@@ -428,7 +428,7 @@ const PostComposer = ({
       <div className="flex justify-end">
         <button
           type="submit"
-          className="inline-flex items-center rounded-full bg-primary px-6 py-2 text-sm font-semibold text-contrast transition hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex items-center rounded-full bg-primary px-6 py-2 text-sm font-semibold text-contrast transition hover:bg-heading focus:outline-none focus:ring-2 focus:ring-primary disabled:cursor-not-allowed disabled:opacity-60"
           disabled={submitting}
         >
           {submitting

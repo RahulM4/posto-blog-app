@@ -131,7 +131,7 @@ const HomePage = () => {
 
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-contrast">Latest posts</h2>
+          <h2 className="text-2xl font-semibold text-heading">Latest posts</h2>
           <p className="text-sm text-muted">Fresh perspectives, published regularly.</p>
         </div>
 
@@ -161,7 +161,7 @@ const HomePage = () => {
               type="button"
               onClick={() => fetchPosts((meta?.page || 1) + 1, true)}
               disabled={loadingMore}
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-secondary disabled:cursor-not-allowed disabled:bg-accent"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-heading disabled:cursor-not-allowed disabled:bg-accent"
             >
               {loadingMore ? 'Loading…' : 'Load more'}
             </button>
@@ -171,8 +171,8 @@ const HomePage = () => {
 
       <section className="space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-contrast">Featured products</h2>
-          <Link to="/products" className="text-sm font-semibold text-secondary hover:text-contrast">View all</Link>
+          <h2 className="text-2xl font-semibold text-heading">Featured products</h2>
+          <Link to="/products" className="text-sm font-semibold text-secondary hover:text-heading">View all</Link>
         </div>
         {products.length === 0 ? (
           productsError ? (

@@ -43,12 +43,12 @@ const VerifyEmailPage = () => {
         }
       />
 
-      <div className="mx-auto max-w-md space-y-4 rounded-3xl border border-muted bg-surface p-6 text-sm text-contrast shadow-lg shadow-soft">
+      <div className="mx-auto max-w-md space-y-4 rounded-3xl border border-muted bg-surface p-6 text-sm text-body shadow-lg shadow-soft">
         {status.success ? (
           <p>
             You can now sign in once an administrator approves your account.
             <br />
-            <Link to="/login" className="text-secondary hover:text-contrast">
+            <Link to="/login" className="text-secondary hover:text-heading">
               Continue to sign in
             </Link>
             .

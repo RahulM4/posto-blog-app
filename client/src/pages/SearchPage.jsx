@@ -98,11 +98,11 @@ const SearchPage = () => {
             value={term}
             onChange={(event) => setTerm(event.target.value)}
             placeholder="Search posts, guides, and products"
-            className="h-12 flex-1 rounded-full border border-muted bg-background px-4 text-sm text-contrast placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
+            className="h-12 flex-1 rounded-full border border-muted bg-background px-4 text-sm text-body placeholder:text-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary"
           />
           <button
             type="submit"
-            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-contrast transition hover:bg-secondary"
+            className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-contrast transition hover:bg-heading"
           >
             Search
           </button>
@@ -144,7 +144,7 @@ const SearchPage = () => {
           <button
             type="button"
             onClick={loadMore}
-            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-secondary"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-contrast transition hover:bg-heading"
           >
             Load more
           </button>

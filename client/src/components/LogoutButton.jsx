@@ -28,8 +28,8 @@ const LogoutButton = ({ variant = 'default', className = '' }) => {
     'inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold transition disabled:cursor-not-allowed';
   const variantClasses =
     variant === 'minimal'
-      ? 'border-muted text-contrast hover:border-primary hover:text-secondary'
-      : 'border-muted bg-surface text-primary hover:border-primary hover:bg-accent hover:text-secondary';
+      ? 'border-muted bg-accent text-body hover:border-primary hover:bg-heading hover:text-contrast'
+      : 'border-muted bg-surface text-primary hover:border-primary hover:bg-heading hover:text-contrast';
 
   return (
     <div className="flex flex-col items-end gap-1">
