@@ -9,4 +9,7 @@ git push origin main
 # for wrong remote 
 git remote remove origin
 
-# posto-blog-app
+# push to github
+git add .
+git commit -m "update"
+git push origin main
