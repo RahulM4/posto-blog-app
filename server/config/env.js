@@ -25,7 +25,8 @@ const config = {
   localClientUrl: process.env.LOCAL_CLIENT_URL || '',
   allowRegistration: boolean(process.env.ALLOW_REGISTRATION, true),
   database: {
-    uri: process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/posto-db'
+    uri: process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/posto-db',
+    serverSelectionTimeoutMs: number(process.env.MONGODB_SERVER_SELECTION_TIMEOUT_MS, 15000)
   },
   jwt: {
     accessSecret: process.env.JWT_ACCESS_SECRET || 'dev_access_secret',
