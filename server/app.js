@@ -13,9 +13,16 @@ const { notFound, errorHandler } = require('./middleware/error');
 const app = express();
 
 app.use(helmet());
+const allowedOrigins = [config.clientUrl, config.localClientUrl].filter(Boolean);
+
 app.use(
   cors({
-    origin: config.clientUrl,
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error('Not allowed by CORS'));
+    },
     credentials: true
   })
 );
@@ -27,7 +34,7 @@ if (config.env !== 'test') {
   app.use(requestLogger());
 }
 
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+app.use('/uploads', express.static(path.join(__dirname, './uploads')));
 app.use('/api', apiRoutes);
 
 
@@ -50,5 +57,4 @@ app.use(notFound);
 app.use(errorHandler);
 
 module.exports = app;
-
 

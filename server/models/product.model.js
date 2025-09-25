@@ -72,7 +72,6 @@ const ProductSchema = new mongoose.Schema(
   }
 );
 
-ProductSchema.index({ slug: 1 });
 ProductSchema.index({ status: 1, visibility: 1 });
 ProductSchema.index({ title: 'text', description: 'text' });
 ProductSchema.index({ deletedAt: 1 });

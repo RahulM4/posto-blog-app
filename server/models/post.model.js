@@ -75,7 +75,6 @@ const PostSchema = new mongoose.Schema(
   }
 );
 
-PostSchema.index({ slug: 1 });
 PostSchema.index({ status: 1, scheduledAt: 1 });
 PostSchema.index({ title: 'text', content: 'text' });
 PostSchema.index({ deletedAt: 1 });

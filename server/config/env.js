@@ -22,9 +22,10 @@ const config = {
   port: number(process.env.PORT, 4000),
   appName: process.env.APP_NAME || 'POSTO Admin Platform',
   clientUrl: process.env.CLIENT_URL || 'http://localhost:5173',
+  localClientUrl: process.env.LOCAL_CLIENT_URL || '',
   allowRegistration: boolean(process.env.ALLOW_REGISTRATION, true),
   database: {
-    uri: process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/mern_admin'
+    uri: process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/posto-db'
   },
   jwt: {
     accessSecret: process.env.JWT_ACCESS_SECRET || 'dev_access_secret',
